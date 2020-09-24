@@ -7,11 +7,11 @@
 
 Алгоритм ближайшего соседа - 1NN относит классифицируемый объект к тому классу, к которму принадлежит его ближайший сосед.
 
-oNN <- function(xl, z, k)
+oneNN <- function(xl, z)
 
 {
 
-  orderedXl <- sortObjectsByDist(xl, z, 1)
+  orderedXl <- sortObjectsByDist(xl, z)
   
   n <- dim(orderedXl)[2] - 1
   
