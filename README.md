@@ -17,6 +17,8 @@ oneNN <- function(xl, z)
   return (class)
 }
 ```
+![1nn](https://github.com/kristinaovc/ML1/blob/master/1NN.PNG)
+
 Алгоритм k ближайших соседей - kNN относит объект к тому классу, элементов которого больше среди k ближайших соседей
 ```R
 kNN <- function(xl, z, k)
@@ -29,6 +31,8 @@ kNN <- function(xl, z, k)
   return (class)	
 }
 ```
+![knn](https://github.com/kristinaovc/ML1/blob/master/kNN.PNG)
+
 Оптимальное k подбирается по критерию скользящего контроля LOO.
 
 Алгоритм k взвешенных ближайших соседей - kwNN в каждом классе выбирается k ближайших объектов, и объект относится к тому классу, для которого среднее расстояние до k ближайших соседей минимально.
