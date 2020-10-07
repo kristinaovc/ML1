@@ -41,9 +41,9 @@ oneNN <- function(xl, z)
 ```
 ![1nn](https://github.com/kristinaovc/ML1/blob/master/1NN.PNG)
 
-**Алгоритм k ближайших соседей** - kNN относит объект u к тому классу, элементов которого больше среди k ближайших соседей ![15](https://github.com/kristinaovc/ML1/blob/master/15.PNG)
+**Алгоритм k ближайших соседей** - kNN относит объект u к тому классу, элементов которого больше среди k ближайших соседей ![15](https://github.com/kristinaovc/ML1/blob/master/images/15.PNG)
 
-![16](https://github.com/kristinaovc/ML1/blob/master/16.PNG)
+![16](https://github.com/kristinaovc/ML1/blob/master/images/16.PNG)
 
 
 ```R
@@ -58,6 +58,9 @@ kNN <- function(xl, z, k)
 }
 ```
 ![knn](https://github.com/kristinaovc/ML1/blob/master/kNN.PNG)
+
+Вопрос: Как выбирать k? При k = 1 получаем метод ближайшего соседа и, соответственно, неустойчивость к шуму, при k = l, наоборот, алгоритм чрезмерно устойчив и вырождается в константу. Таким образом, крайние значения k нежелательны. На практике оптимальное k подбирается по критерию скользящего контроля LOO.
+
 
 Оптимальное k подбирается по критерию скользящего контроля LOO.
 
