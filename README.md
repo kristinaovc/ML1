@@ -41,7 +41,11 @@ oneNN <- function(xl, z)
 ```
 ![1nn](https://github.com/kristinaovc/ML1/blob/master/1NN.PNG)
 
-Алгоритм k ближайших соседей - kNN относит объект к тому классу, элементов которого больше среди k ближайших соседей
+**Алгоритм k ближайших соседей** - kNN относит объект u к тому классу, элементов которого больше среди k ближайших соседей ![15](https://github.com/kristinaovc/ML1/blob/master/15.PNG)
+
+![16](https://github.com/kristinaovc/ML1/blob/master/16.PNG)
+
+
 ```R
 kNN <- function(xl, z, k)
 {
