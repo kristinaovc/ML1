@@ -61,5 +61,25 @@ kNN <- function(xl, z, k)
 
 *Вопрос:* Как выбирать k? При k = 1 получаем метод ближайшего соседа и, соответственно, неустойчивость к шуму, при k = l, наоборот, алгоритм чрезмерно устойчив и вырождается в константу. Таким образом, крайние значения k нежелательны. На практике оптимальное k подбирается по критерию скользящего контроля LOO.
 
+Алгоритм: убираем из выборки один i-тый элемент. Все остальные становятся обучающими, а I-тый контрольным. и смотрим ответы на обучающих и н контрольном. Если они отличаются, то Loo=1.
+
+![17](https://github.com/kristinaovc/ML1/blob/master/images/17.PNG) - выборка
+
+![18](https://github.com/kristinaovc/ML1/blob/master/images/18.PNG) - ответы
+
+![19](https://github.com/kristinaovc/ML1/blob/master/images/19.PNG) - выборка(алгоритм)
+
+Возьмем алгоритм и проверим на ![20](https://github.com/kristinaovc/ML1/blob/master/images/20.PNG)
+
+![21](https://github.com/kristinaovc/ML1/blob/master/images/21.PNG)
+
+то есть
+
+![22](https://github.com/kristinaovc/ML1/blob/master/images/22.PNG)
+
+![23](https://github.com/kristinaovc/ML1/blob/master/images/23.PNG) - суммируем и делим на l
+
+LOO считает для метода по выборке ![24](https://github.com/kristinaovc/ML1/blob/master/images/24.PNG)
+
 
 Алгоритм k взвешенных ближайших соседей - kwNN в каждом классе выбирается k ближайших объектов, и объект относится к тому классу, для которого среднее расстояние до k ближайших соседей минимально.
