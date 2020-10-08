@@ -105,7 +105,8 @@ LOO <- function(x1)
   min_k <- which.min(L[1:l])
   min_m <- L[min_k]
   I <- matrix(1:l, l, 1)
-  for (i in 1:l) {
+  for (i in 1:l) 
+    {
     L[i] <- L[i]/l
   }
   plot(I[1:l], L[1:l], type = "s", xlab = "k", ylab = "LOO")
