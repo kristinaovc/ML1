@@ -57,7 +57,7 @@ kNN <- function(xl, z, k)
   return (class)	
 }
 ```
-![knn](https://github.com/kristinaovc/ML1/blob/master/kNN.PNG)
+![knn](https://github.com/kristinaovc/ML1/blob/master/images/kNN.PNG)
 
 *Вопрос:* Как выбирать k? При k = 1 получаем метод ближайшего соседа и, соответственно, неустойчивость к шуму, при k = l, наоборот, алгоритм чрезмерно устойчив и вырождается в константу. Таким образом, крайние значения k нежелательны. На практике оптимальное k подбирается по критерию скользящего контроля LOO(leave one out) и CV (Cross Validation).
 
