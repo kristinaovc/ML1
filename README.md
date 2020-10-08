@@ -97,7 +97,8 @@ LOO <- function(x1)
     for (k in 1:l) 
       {
       class <- kNN(k, orderedX2)
-      if (class != x1[i, 3]) {
+      if (class != x1[i, 3]) 
+        {
         L[k] <- L[k] + 1
       }
     }
