@@ -126,3 +126,5 @@ LOO <- function(x1)
 ![26](https://github.com/kristinaovc/ML1/blob/master/image/26.PNG)— строго убывающая последовательность вещественных весов, задающая вклад i-го соседа при классификации объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG).
 
 **Примеры весов** ![27](https://github.com/kristinaovc/ML1/blob/master/image/27.PNG) — геометрическая прогрессия со знаменателем ![28](https://github.com/kristinaovc/ML1/blob/master/image/28.PNG) , который можно подбирать по критерию LOO.
+
+![29](https://github.com/kristinaovc/ML1/blob/master/kwnn.PNG)
