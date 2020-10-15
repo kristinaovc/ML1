@@ -4,19 +4,19 @@
 
 ### Метод ближайших соседей
 
-Для произвольного объекта ![1](https://github.com/kristinaovc/ML1/blob/master/images/1.PNG) расположим элементы обучающей выборки ![2](https://github.com/kristinaovc/ML1/blob/master/images/2.PNG) в порядке возрастания расстояния до u:
+Для произвольного объекта ![1](https://github.com/kristinaovc/ML1/blob/master/image/1.PNG) расположим элементы обучающей выборки ![2](https://github.com/kristinaovc/ML1/blob/master/image/2.PNG) в порядке возрастания расстояния до ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG):
 
-![3](https://github.com/kristinaovc/ML1/blob/master/images/3.PNG)
+![4](https://github.com/kristinaovc/ML1/blob/master/image/4.PNG)
 
-где ![4](https://github.com/kristinaovc/ML1/blob/master/images/4.PNG)— i-ый сосед объекта u, а ![5](https://github.com/kristinaovc/ML1/blob/master/images/5.PNG)— ответ на i-ом соседе.
+где ![5](https://github.com/kristinaovc/ML1/blob/master/image/5.PNG)— i-ый сосед объекта u, а ![6](https://github.com/kristinaovc/ML1/blob/master/image/6.PNG)— ответ на i-ом соседе.
 
-**Метрический алгоритм классификации с обучающей выборкой ![6](https://github.com/kristinaovc/ML1/blob/master/images/6.PNG) относит объект u к тому классу ![7](https://github.com/kristinaovc/ML1/blob/master/images/7.PNG) , для которого суммарный вес ближайших обучающих объектов ![8](https://github.com/kristinaovc/ML1/blob/master/images/8.PNG) максимален:**
+**Метрический алгоритм классификации с обучающей выборкой ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG) относит объект ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) к тому классу ![8](https://github.com/kristinaovc/ML1/blob/master/image/8.PNG) , для которого суммарный вес ближайших обучающих объектов ![9](https://github.com/kristinaovc/ML1/blob/master/image/9.PNG) максимален:**
 
- ![9](https://github.com/kristinaovc/ML1/blob/master/images/9.PNG)
+ ![10](https://github.com/kristinaovc/ML1/blob/master/image/10.PNG)
  
- где весовая функция ![10](https://github.com/kristinaovc/ML1/blob/master/images/10.PNG) оценивает степень важности i-го соседа для классификации объекта u. Функция ![11](https://github.com/kristinaovc/ML1/blob/master/images/11.PNG) — называется оценкой близости объекта u к классу y.
+ где весовая функция ![11](https://github.com/kristinaovc/ML1/blob/master/image/11.PNG) оценивает степень важности i-го соседа для классификации объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG). Функция ![12](https://github.com/kristinaovc/ML1/blob/master/image/12.PNG) — называется оценкой близости объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) к классу y.
 
-Обучающая выборка ![6](https://github.com/kristinaovc/ML1/blob/master/images/6.PNG)  играет роль параметра алгоритма. Алгоритм ![12](https://github.com/kristinaovc/ML1/blob/master/images/12.PNG) строит локальную аппроксимацию выборки ![6](https://github.com/kristinaovc/ML1/blob/master/images/6.PNG), причем вычисления откладываются до момента, пока не станет известен объект u. По этой причине метрические алгоритмы относятся к методам ленивого обучения (lazy learning), в отличие от усердного обучения (eager learning), когда на этапе обучения строится функция, аппроксимирующая выборку.
+Обучающая выборка ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG)  играет роль параметра алгоритма. Алгоритм ![13](https://github.com/kristinaovc/ML1/blob/master/image/13.PNG) строит локальную аппроксимацию выборки ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG), причем вычисления откладываются до момента, пока не станет известен объект ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG). По этой причине метрические алгоритмы относятся к методам ленивого обучения (lazy learning), в отличие от усердного обучения (eager learning), когда на этапе обучения строится функция, аппроксимирующая выборку.
 
 Метрические алгоритмы классификации относятся также к методам рассуждения по прецедентам (case-based reasoning, CBR). Классический метод обучения по прецеденту - минимизация эмпирического риска.
 
@@ -24,9 +24,9 @@
 
 Метод обучения строит по выборке алгоритм отображения.
 
-#### **Алгоритм ближайшего соседа - 1NN** относит классифицируемый объект ![13](https://github.com/kristinaovc/ML1/blob/master/images/13.PNG) к тому классу, к которму принадлежит его ближайший сосед:
+#### **Алгоритм ближайшего соседа - 1NN** относит классифицируемый объект ![14](https://github.com/kristinaovc/ML1/blob/master/image/14.PNG) к тому классу, к которму принадлежит его ближайший сосед:
 
-![14](https://github.com/kristinaovc/ML1/blob/master/images/14.PNG)
+![15](https://github.com/kristinaovc/ML1/blob/master/image/15.PNG)
 
 ```R
 oneNN <- function(xl, z)
@@ -41,9 +41,9 @@ oneNN <- function(xl, z)
 ```
 ![1nn](https://github.com/kristinaovc/ML1/blob/master/1NN.PNG)
 
-#### **Алгоритм k ближайших соседей - kNN** относит объект u к тому классу, элементов которого больше среди k ближайших соседей ![15](https://github.com/kristinaovc/ML1/blob/master/images/15.PNG)
+#### **Алгоритм k ближайших соседей - kNN** относит объект u к тому классу, элементов которого больше среди k ближайших соседей ![5](https://github.com/kristinaovc/ML1/blob/master/image/5.PNG) , ![16](https://github.com/kristinaovc/ML1/blob/master/image/16.PNG)
 
-![16](https://github.com/kristinaovc/ML1/blob/master/images/16.PNG)
+![17](https://github.com/kristinaovc/ML1/blob/master/image/17.PNG)
 
 
 ```R
@@ -63,21 +63,19 @@ kNN <- function(xl, z, k)
 
 #### **Алгоритм LOO:** убираем из выборки один i-тый элемент. Все остальные становятся обучающими, а I-тый контрольным. и смотрим ответы на обучающих и н контрольном. Если они отличаются, то Loo=1.
 
-![17](https://github.com/kristinaovc/ML1/blob/master/images/17.PNG) - выборка
+![18](https://github.com/kristinaovc/ML1/blob/master/image/18.PNG) - выборка
 
-![18](https://github.com/kristinaovc/ML1/blob/master/images/18.PNG) - ответы
+![19](https://github.com/kristinaovc/ML1/blob/master/image/19.PNG) - ответы
 
-![19](https://github.com/kristinaovc/ML1/blob/master/images/19.PNG) - выборка(алгоритм)
+![20](https://github.com/kristinaovc/ML1/blob/master/image/20.PNG) - выборка(алгоритм)
 
-Возьмем алгоритм и проверим на ![20](https://github.com/kristinaovc/ML1/blob/master/images/20.PNG)
+Возьмем алгоритм и проверим на ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG)
 
-![21](https://github.com/kristinaovc/ML1/blob/master/images/21.PNG)
+![22](https://github.com/kristinaovc/ML1/blob/master/image/22.PNG)
 
 то есть
 
-![22](https://github.com/kristinaovc/ML1/blob/master/images/22.PNG)
-
-![23](https://github.com/kristinaovc/ML1/blob/master/images/23.PNG) - суммируем и делим на l
+![23](https://github.com/kristinaovc/ML1/blob/master/image/23.PNG) - суммируем и делим на l
 
 LOO считает для метода по выборке ![24](https://github.com/kristinaovc/ML1/blob/master/images/24.PNG)
 
