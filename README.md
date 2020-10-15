@@ -77,7 +77,7 @@ kNN <- function(xl, z, k)
 
 ![23](https://github.com/kristinaovc/ML1/blob/master/image/23.PNG) - суммируем и делим на l
 
-LOO считает для метода по выборке ![24](https://github.com/kristinaovc/ML1/blob/master/images/24.PNG)
+LOO считает для метода по выборке ![24](https://github.com/kristinaovc/ML1/blob/master/image/24.PNG)
 
 Обучающая способность алгоритма проверяется на данных, которые не использовались при обучении.
 
