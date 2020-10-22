@@ -147,7 +147,7 @@ LOO <- function(x1)
 
 Алгоритм ![34](https://github.com/kristinaovc/ML1/blob/master/image/34.PNG)  называется алгоритмом парзеновского окна.
 
-Параметр h называется шириной окна и играет примерно ту же роль, что и число соседей k. “Окно” — это сферическая окрестность объекта ![3]((https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) радиуса h, при попадании в которую обучающий объект ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) “голосует” за отнесение объекта ![3]https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) к классу ![35](https://github.com/kristinaovc/ML1/blob/master/image/35.PNG).
+Параметр h называется шириной окна и играет примерно ту же роль, что и число соседей k. “Окно” — это сферическая окрестность объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) радиуса h, при попадании в которую обучающий объект ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) “голосует” за отнесение объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) к классу ![35](https://github.com/kristinaovc/ML1/blob/master/image/35.PNG).
 
 Параметр h можно задавать априори или определять по скользящему контролю. Зависимость LOO(h), как правило, имеет характерный минимум, поскольку слишком узкие окна приводят к неустойчивой классификации; а слишком широкие — к вырождению алгоритма в константу.
 
