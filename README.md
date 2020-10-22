@@ -137,3 +137,24 @@ LOO <- function(x1)
 
 ### Метод парзеновского окна
 
+Рассмотрим весовую функцию ![11](https://github.com/kristinaovc/ML1/blob/master/image/11.PNG) как функцию не от ранга соседа, а как функцию от расстояния ![29](https://github.com/kristinaovc/ML1/blob/master/image/29.PNG) :
+
+![30](https://github.com/kristinaovc/ML1/blob/master/image/30.PNG) ,
+
+где ![31](https://github.com/kristinaovc/ML1/blob/master/image/31.PNG) — невозрастающая на ![32](https://github.com/kristinaovc/ML1/blob/master/image/32.PNG) (гипотеза компактности) функция ядра. В этом случае метрический классификатор примет следующий вид:
+
+![33](https://github.com/kristinaovc/ML1/blob/master/image/33.PNG)
+
+Алгоритм ![34](https://github.com/kristinaovc/ML1/blob/master/image/34.PNG)  называется алгоритмом парзеновского окна.
+
+Параметр h называется шириной окна и играет примерно ту же роль, что и число соседей k. “Окно” — это сферическая окрестность объекта ![3](https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) радиуса h, при попадании в которую обучающий объект ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) “голосует” за отнесение объекта ![3]https://github.com/kristinaovc/ML1/blob/master/image/3.PNG) к классу ![35](https://github.com/kristinaovc/ML1/blob/master/image/35.PNG).
+
+Параметр h можно задавать априори или определять по скользящему контролю. Зависимость LOO(h), как правило, имеет характерный минимум, поскольку слишком узкие окна приводят к неустойчивой классификации; а слишком широкие — к вырождению алгоритма в константу.
+
+Если объекты существенно неравномерно распределены по пространству X, то необходимо использовать метод парзеновского окна с переменной шириной окна:
+
+![36](https://github.com/kristinaovc/ML1/blob/master/image/36.PNG).
+
+
+
+
