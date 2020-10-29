@@ -127,6 +127,27 @@ LOO <- function(x1)
 
 **Примеры весов** ![27](https://github.com/kristinaovc/ML1/blob/master/image/27.PNG) — геометрическая прогрессия со знаменателем ![28](https://github.com/kristinaovc/ML1/blob/master/image/28.PNG) , который можно подбирать по критерию LOO.
 
+```R
+kwNN <- function(xl, z, k, q)
+{
+  orderedXl <- sortObjectsByDist(xl, z)
+  n <- dim(orderedXl)[2] - 1
+  for(i in 1:k){
+    orderedXl[i, 4] <- q^i
+  }
+  types <- c("setosa", "versicolor", "virginica")
+  mat <- matrix(data=0, nrow=1, ncol=3)
+  names(mat) <- types
+  classes <- orderedXl[1:k, (n+1):(n+2)]
+  mat[1,1] <- sum(classes[classes$Species=="setosa",2])
+  mat[1,2] <- sum(classes[classes$Species=="versicolor",2])
+  mat[1,3] <- sum(classes[classes$Species=="virginica",2])
+  count <- which.max(mat)
+  class <- types[count]
+  return (class)
+}
+```
+
 ![29](https://github.com/kristinaovc/ML1/blob/master/kwnn.PNG)
 ![30](https://github.com/kristinaovc/ML1/blob/master/klasskwnn.PNG)
 **Недостатки:**
