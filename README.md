@@ -150,6 +150,35 @@ kwNN <- function(xl, z, k, q)
 
 ![29](https://github.com/kristinaovc/ML1/blob/master/kwnn.PNG)
 ![30](https://github.com/kristinaovc/ML1/blob/master/klasskwnn.PNG)
+```R
+LOO = function(xl) 
+  {
+  n <- dim(xl)[1]-1
+  loo <- rep(0, n)
+  class <- iris[, 5]
+  for(i in 1:(n+1))
+    {
+    X <- xl[-i, 1:3]
+    z <- xl[i, 1:2]
+    orderedXl <- sortObjectByDist(X, z)
+    for(k in 1:n)
+      {
+      test <- kwnn(X,z,k,orderedXl)
+      if(colors[test] != colors[class[i]]){
+        loo[k] <- loo[k]+1;
+      }    
+    } 
+  }
+  loo <- loo/(n+1)
+  x <- 1:(length(loo))
+  y <- loo
+  plot(x, y,main ="LOO for KWNN(k)", xlab="k", ylab="LOO", type = "l")
+  min <- which.min(loo)
+  lOOmin <- round(loo[min],3)
+  points(min, loo[min], pch = 21, col = "red",bg = "red")
+  text(lOOmin, labels =paste("K = ", min), cex= 0.7, pos=3, col = "red")
+}
+```
 ![30](https://github.com/kristinaovc/ML1/blob/master/lookwnn.PNG)
 **Недостатки:**
 
