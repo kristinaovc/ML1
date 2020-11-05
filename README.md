@@ -218,6 +218,38 @@ LOO = function(xl)
 
 ![36](https://github.com/kristinaovc/ML1/blob/master/image/36.PNG).
 
+Чтобы найти ширину окна и наиболее подходящий нам тип ядра, мы воспользуемся принципом максимального правдоподобия и исключением объектов по одному leave-one-out:
+
+![37](https://github.com/kristinaovc/ML1/blob/master/image/37.PNG).
+
+То есть, мы будем восстанавливать значение класса для одного объекта из нашей выборки и максимизировать логарифм количества правильных ответов при исключении по очереди всех объектов выборки. Максимизация этого значения происходит по двум параметрам - ширине окна h и типу ядерной функции. Ширину окна мы можем подобрать из некоторого диапазона \delta{}H, полученного из эмпирических предположений. Ядро выбирается из нижеприведенного набора ядер:
+
+Прямоугольное 
+
+![42](https://github.com/kristinaovc/ML1/blob/master/image/42.PNG).
+
+Треугольное
+
+![40](https://github.com/kristinaovc/ML1/blob/master/image/40.PNG).
+
+Квартическое
+
+![39](https://github.com/kristinaovc/ML1/blob/master/image/39.PNG).
+
+Епанечникова
+
+![38](https://github.com/kristinaovc/ML1/blob/master/image/38.PNG).
+
+Гауссовское
+
+![41](https://github.com/kristinaovc/ML1/blob/master/image/41.PNG).
+
+
+
+
+
+
+
 
 
 
