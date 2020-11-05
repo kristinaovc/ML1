@@ -252,7 +252,7 @@ LOO = function(xl)
 
 ![41](https://github.com/kristinaovc/ML1/blob/master/image/41.PNG).
 
-![46](https://github.com/kristinaovc/ML1/blob/master/PWGauss.PNG).
+![46](https://github.com/kristinaovc/ML1/blob/master/PWgauss.PNG).
 
 
 
