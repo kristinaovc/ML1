@@ -228,11 +228,23 @@ LOO = function(xl)
 
 ![42](https://github.com/kristinaovc/ML1/blob/master/image/42.PNG).
 
+```R
+kernel.R <- function(r){
+  0.5 * (abs(r) <= 1) 
+}
+```
+
 ![43](https://github.com/kristinaovc/ML1/blob/master/PWPryamoug.PNG).
 
 Треугольное
 
 ![40](https://github.com/kristinaovc/ML1/blob/master/image/40.PNG).
+
+```R
+kernel.T <- function(r){
+  (1 - abs(r)) * (abs(r) <= 1) 
+  }
+```
 
 ![44](https://github.com/kristinaovc/ML1/blob/master/PWTreug.PNG).
 
@@ -240,11 +252,23 @@ LOO = function(xl)
 
 ![39](https://github.com/kristinaovc/ML1/blob/master/image/39.PNG).
 
+```R
+kernel.Q <- function(r){
+  (15 / 16) * (1 - r ^ 2) ^ 2 * (abs(r) <= 1) 
+}
+```
+
 ![45](https://github.com/kristinaovc/ML1/blob/master/PWKvart.PNG).
 
 Епанечникова
 
 ![38](https://github.com/kristinaovc/ML1/blob/master/image/38.PNG).
+
+```R
+kernel.E <- function(r){
+  (3 / 4) * (1 - r ^ 2) * (abs(r) <= 1) 
+}
+```
 
 ![46](https://github.com/kristinaovc/ML1/blob/master/PWepanech.PNG).
 
@@ -252,9 +276,27 @@ LOO = function(xl)
 
 ![41](https://github.com/kristinaovc/ML1/blob/master/image/41.PNG).
 
+```R
+kernel.G <- function(r){
+  dnorm(r) 
+} 
+```
+
 ![46](https://github.com/kristinaovc/ML1/blob/master/PWgauss.PNG).
 
-
+```R
+PW <- function(distToObjects, u, h) 
+  {
+  weights <- kernel.G(distToObjects / h)
+  classes <- unique(names(distToObjects))
+  wSort <- sapply(classes, function(class, arr) { sum(arr[names(arr) == class]) } , weights)
+  if (max(wSort) == 0)
+    {
+    return("") 
+  }
+  return(names(which.max(wSort)))
+}
+```
 
 
 
