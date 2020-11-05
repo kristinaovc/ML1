@@ -228,21 +228,31 @@ LOO = function(xl)
 
 ![42](https://github.com/kristinaovc/ML1/blob/master/image/42.PNG).
 
+![43](https://github.com/kristinaovc/ML1/blob/master/PWPryamoug.PNG).
+
 Треугольное
 
 ![40](https://github.com/kristinaovc/ML1/blob/master/image/40.PNG).
+
+![44](https://github.com/kristinaovc/ML1/blob/master/PWTreug.PNG).
 
 Квартическое
 
 ![39](https://github.com/kristinaovc/ML1/blob/master/image/39.PNG).
 
+![45](https://github.com/kristinaovc/ML1/blob/master/PWKvart.PNG).
+
 Епанечникова
 
 ![38](https://github.com/kristinaovc/ML1/blob/master/image/38.PNG).
 
+![46](https://github.com/kristinaovc/ML1/blob/master/PWepanech.PNG).
+
 Гауссовское
 
 ![41](https://github.com/kristinaovc/ML1/blob/master/image/41.PNG).
+
+![46](https://github.com/kristinaovc/ML1/blob/master/PWGauss.PNG).
 
 
 
