@@ -1,10 +1,11 @@
 # ML1
-  # Table of contents
+  # Оглавление
 1. [Метрические алгоритмы](#Метрические)
     1. [Алгоритм 1NN](#1NN)
     2. [Алгоритм KNN](#KNN)
     3. [Алгоритм KWNN](#KWNN)
     4. [Алгоритм парзеновкого окна](#PW)
+    5. [Алгоритм потенциальных функций](#PF)
 
 | Алгоритм| k/h | Величина ошибки |
 | :---: | :---: | :---: |
@@ -313,6 +314,34 @@ PW <- function(distToObjects, u, h)
   return(names(which.max(wSort)))
 }
 ```
+### Метод потенциальных функций <a name="PF"></a>
+
+Если в методе парзеновского окна центр окна поместить в классифицируемый объект, то получим метод потенциальных функций:
+
+![43](https://github.com/kristinaovc/ML1/blob/master/image/43.PNG)
+
+Теперь ширина окна зависит не от классифицируемого объекта ![44](https://github.com/kristinaovc/ML1/blob/master/image/44.PNG), а от обучающего ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG).
+
+Данный алгоритм имеет достаточно богатый набор из ![45](https://github.com/kristinaovc/ML1/blob/master/image/45.PNG) параметров ![46](https://github.com/kristinaovc/ML1/blob/master/image/46.PNG)
+
+**Алгоритм**
+
+**Вход**: ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG)— обучающая выборка
+
+**Выход**: Коэффициенты ![47](https://github.com/kristinaovc/ML1/blob/master/image/47.PNG)
+
+1: Инициализация: ![48](https://github.com/kristinaovc/ML1/blob/master/image/48.PNG)
+
+2: **повторять**
+
+3: выбрать объект ![49](https://github.com/kristinaovc/ML1/blob/master/image/49.PNG)
+
+4: **если** ![50](https://github.com/kristinaovc/ML1/blob/master/image/50.PNG)  **то**
+
+5:  ![51](https://github.com/kristinaovc/ML1/blob/master/image/51.PNG) 
+
+6: **пока** число ошибок на выборке не окажется достаточно мало
+
 
 
 
