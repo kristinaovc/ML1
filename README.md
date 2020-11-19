@@ -342,6 +342,27 @@ PW <- function(distToObjects, u, h)
 
 6: **пока** число ошибок на выборке не окажется достаточно мало
 
+Ядро Епанечникова
+
+![52](https://github.com/kristinaovc/ML1/blob/master/PF/PFEpanech.PNG)
+
+Гауссовское ядро
+
+![53](https://github.com/kristinaovc/ML1/blob/master/PF/PFGauss.PNG)
+
+Квартическое ядро
+
+![54](https://github.com/kristinaovc/ML1/blob/master/PF/PFKvart.PNG)
+
+Прямоугольное ядро
+
+![55](https://github.com/kristinaovc/ML1/blob/master/PF/PFPryamoug.PNG)
+
+Треугольное ядро
+
+![56](https://github.com/kristinaovc/ML1/blob/master/PF/PFTreug.PNG)
+
+
 
 
 
