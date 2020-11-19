@@ -342,6 +342,25 @@ PW <- function(distToObjects, u, h)
 
 6: **пока** число ошибок на выборке не окажется достаточно мало
 
+```R
+PF <- function(distances, potentials, h, xl, main_kernel) 
+  {
+  l <- nrow(xl)
+  n <- ncol(xl)
+  classes <- xl[, n]
+  weights <- table(classes) 
+  weights[1:length(weights)] <- 0
+  for (i in 1:l) 
+    { 
+    class <- xl[i, n] 
+    r <- distances[i] / h[i]
+    weights[class] <- weights[class] + potentials[i] * main_kernel(r) 
+  }
+  if (max(weights) != 0) return (names(which.max(weights)))
+  return (0)
+}
+```
+
 Ядро Епанечникова
 
 ![52](https://github.com/kristinaovc/ML1/blob/master/PF/PFEpanech.PNG)
