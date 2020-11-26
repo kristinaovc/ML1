@@ -452,8 +452,12 @@ PF <- function(distances, potentials, h, xl, main_kernel)
 
 Результатом работы алгоритма STOLP является разбиение обучающих объектов на три категории: шумовые, эталонные и неинформативные. Если гипотеза компактности верна и выборка достаточно велика, то основная масса обучающих объектов окажется неинформативной и будет отброшена. Фактически, этот алгоритм выполняет сжатие исходных данных
 
+![66](https://github.com/kristinaovc/ML1/blob/master/Stolp/StolpMargin.PNG)
 
 
+![67](https://github.com/kristinaovc/ML1/blob/master/Stolp/StolpPoints.PNG)
+
+![68](https://github.com/kristinaovc/ML1/blob/master/Stolp/StolpMap.PNG)
 
 
 
