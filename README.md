@@ -7,6 +7,7 @@
     4. [Алгоритм парзеновкого окна](#PW)
     5. [Алгоритм потенциальных функций](#PF)
     6. [Алгоритм STOLP](#STOLP)
+2. [Байесовские	алгоритмы	классификации](#Bayes)
 
 | Алгоритм| k/h | Величина ошибки |
 | :---: | :---: | :---: |
@@ -471,7 +472,7 @@ margin -> function(points,classes,point,class)
 
 ![68](https://github.com/kristinaovc/ML1/blob/master/Stolp/StolpMap.PNG)
 
-
+## Байесовские алгоритмы классификации <a name="Bayes"></a>
 
 
 
