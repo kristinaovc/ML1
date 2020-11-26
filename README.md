@@ -381,6 +381,24 @@ PF <- function(distances, potentials, h, xl, main_kernel)
 
 ![56](https://github.com/kristinaovc/ML1/blob/master/PF/PFTreug.PNG)
 
+**Преимущества метода потенциальных функций:**
+
+- Метод прост для понимания и алгоритмической реализации;
+
+- Порождает потоковый алгоритм;
+
+- Хранит лишь часть выборки, следовательно, экономит память.
+
+**Недостатки метода:**
+
+- Порождаемый алгоритм медленно сходится;
+
+- Параметры ![46](https://github.com/kristinaovc/ML1/blob/master/image/46.PNG) настраиваются слишком грубо;
+
+- Значения параметров ![47](https://github.com/kristinaovc/ML1/blob/master/image/47.PNG) зависят от порядка выбора объектов из выборки ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG).
+
+
+
 
 
 
