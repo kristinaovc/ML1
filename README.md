@@ -60,8 +60,8 @@ oneNN <- function(xl, z)
   return (class)
 }
 ```
-![1nn](https://github.com/kristinaovc/ML1/blob/master/1NN.PNG)
-![klass1nn](https://github.com/kristinaovc/ML1/blob/master/klass1nn.PNG)
+![1nn](https://github.com/kristinaovc/ML1/blob/master/Neighbour/1NN.PNG)
+![klass1nn](https://github.com/kristinaovc/ML1/blob/master/Neighbour/klass1nn.PNG)
 
 #### **Алгоритм k ближайших соседей - kNN** относит объект u к тому классу, элементов которого больше среди k ближайших соседей <a name="KNN"></a> ![5](https://github.com/kristinaovc/ML1/blob/master/image/5.PNG) , ![16](https://github.com/kristinaovc/ML1/blob/master/image/16.PNG)
 
@@ -80,7 +80,7 @@ kNN <- function(xl, z, k)
 }
 ```
 ![knn](https://github.com/kristinaovc/ML1/blob/master/images/kknn.PNG)
-![klassknn](https://github.com/kristinaovc/ML1/blob/master/klassknn.PNG)
+![klassknn](https://github.com/kristinaovc/ML1/blob/master/Neighbour/klassknn.PNG)
 
 *Вопрос:* Как выбирать k? При k = 1 получаем метод ближайшего соседа и, соответственно, неустойчивость к шуму, при k = l, наоборот, алгоритм чрезмерно устойчив и вырождается в константу. Таким образом, крайние значения k нежелательны. На практике оптимальное k подбирается по критерию скользящего контроля LOO(leave one out) и CV (Cross Validation).
 
@@ -138,7 +138,7 @@ LOO <- function(x1)
 }
 ```
 
-![LOO](https://github.com/kristinaovc/ML1/blob/master/LOO.PNG)
+![LOO](https://github.com/kristinaovc/ML1/blob/master/Neighbour/LOO.PNG)
 
 ### **Алгоритм k взвешенных ближайших соседей - kwNN** в каждом классе выбирается k ближайших объектов, и объект относится к тому классу, для которого среднее расстояние до k ближайших соседей минимально. <a name="KWNN"></a>
 
@@ -169,8 +169,8 @@ kwNN <- function(xl, z, k, q)
 }
 ```
 
-![29](https://github.com/kristinaovc/ML1/blob/master/kwnn.PNG)
-![30](https://github.com/kristinaovc/ML1/blob/master/klasskwnn.PNG)
+![29](https://github.com/kristinaovc/ML1/blob/master/Neighbour/kwnn.PNG)
+![30](https://github.com/kristinaovc/ML1/blob/master/Neighbour/klasskwnn.PNG)
 ```R
 LOO = function(xl) 
   {
@@ -200,7 +200,7 @@ LOO = function(xl)
   text(lOOmin, labels =paste("K = ", min), cex= 0.7, pos=3, col = "red")
 }
 ```
-![30](https://github.com/kristinaovc/ML1/blob/master/lookwnn.PNG)
+![30](https://github.com/kristinaovc/ML1/blob/master/Neighbour/lookwnn.PNG)
 
 ## Сравнение kNN И kwNN
 
