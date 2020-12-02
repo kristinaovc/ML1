@@ -255,7 +255,7 @@ kernel.R <- function(r){
 }
 ```
 
-![43](https://github.com/kristinaovc/ML1/blob/master/PWPryamoug.PNG).
+![43](https://github.com/kristinaovc/ML1/blob/master/PW/PWPryamoug.PNG).
 
 Треугольное
 
@@ -267,7 +267,7 @@ kernel.T <- function(r){
   }
 ```
 
-![44](https://github.com/kristinaovc/ML1/blob/master/PWTreug.PNG).
+![44](https://github.com/kristinaovc/ML1/blob/master/PW/PWTreug.PNG).
 
 Квартическое
 
@@ -279,7 +279,7 @@ kernel.Q <- function(r){
 }
 ```
 
-![45](https://github.com/kristinaovc/ML1/blob/master/PWKvart.PNG).
+![45](https://github.com/kristinaovc/ML1/blob/master/PW/PWKvart.PNG).
 
 Епанечникова
 
@@ -291,7 +291,7 @@ kernel.E <- function(r){
 }
 ```
 
-![46](https://github.com/kristinaovc/ML1/blob/master/PWepanech.PNG).
+![46](https://github.com/kristinaovc/ML1/blob/master/PW/PWepanech.PNG).
 
 Гауссовское
 
@@ -303,7 +303,7 @@ kernel.G <- function(r){
 } 
 ```
 
-![46](https://github.com/kristinaovc/ML1/blob/master/PWgauss.PNG).
+![46](https://github.com/kristinaovc/ML1/blob/master/PW/PWgauss.PNG).
 
 ```R
 PW <- function(distToObjects, u, h) 
