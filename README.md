@@ -485,6 +485,19 @@ margin -> function(points,classes,point,class)
 
 Параметр ![70](https://github.com/kristinaovc/ML1/blob/master/image/70.PNG) является мат.ожиданием, а ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG) — матрицей ковариации нормального распределения. Матрица ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG) является симметричной и положительно определенной
 
+Линии уровня плотности нормального распределения соответствуют линиям уровня квадратичной формы ![72](https://github.com/kristinaovc/ML1/blob/master/image/72.PNG) и представляют собой эллипсы. Можно выделить три основных вида этих линий уровня в зависимости от значения матрицы ковариации. Если матрица ковариации пропорциональна единичной, то все компоненты нормального распределения ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) являются независимыми друг от друга и имеют одинаковую дисперсию. Линии уровня при этом образуют окружности. Диагональная матрица ковариации соответствует независимым компонентам ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG), но с различными дисперсиями. Линии уровня в этом случае являются эллипсами, параллельными координатным осям. Наконец, произвольная положительная определенная матрица ковариации соответствует эллипсам общего вида.
+
+1) ![73](https://github.com/kristinaovc/ML1/blob/master/image/73.PNG)
+
+![76](https://github.com/kristinaovc/ML1/blob/master/lines/level1.PNG)
+
+2)![74](https://github.com/kristinaovc/ML1/blob/master/image/74.PNG)
+
+![77](https://github.com/kristinaovc/ML1/blob/master/lines/level2.PNG)
+
+3)![75](https://github.com/kristinaovc/ML1/blob/master/image/75.PNG)
+
+![78](https://github.com/kristinaovc/ML1/blob/master/lines/level3.PNG)
 
 
 
