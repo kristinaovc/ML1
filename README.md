@@ -479,7 +479,11 @@ margin -> function(points,classes,point,class)
 
 ### Линии уровня <a name="Lines"></a>
 
+Случайная величина ![66](https://github.com/kristinaovc/ML1/blob/master/image/66.PNG) имеет многомерное нормальное распределение с параметрами ![67](https://github.com/kristinaovc/ML1/blob/master/image/67.PNG) и ![68](https://github.com/kristinaovc/ML1/blob/master/image/68.PNG)  если ее плотность задается выражением
 
+![69](https://github.com/kristinaovc/ML1/blob/master/image/69.PNG)
+
+Параметр ![70](https://github.com/kristinaovc/ML1/blob/master/image/70.PNG) является мат.ожиданием, а ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG) — матрицей ковариации нормального распределения. Матрица ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG) является симметричной и положительно определенной
 
 
 
