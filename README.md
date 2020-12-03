@@ -9,6 +9,7 @@
     6. [Алгоритм STOLP](#STOLP)
 2. [Байесовские	алгоритмы	классификации](#Bayes)
     1. [Линии уровня](#Lines)
+    2. [Наивный байесовский классификатор](#Class)
 
 | Алгоритм| k/h | Величина ошибки |
 | :---: | :---: | :---: |
@@ -505,6 +506,22 @@ margin -> function(points,classes,point,class)
 
 ![78](https://github.com/kristinaovc/ML1/blob/master/lines/level3.PNG)
 
+### Наивный байесовский классификатор <a name="CLass"></a>
+
+Будем полагать, что все объекты описываются ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) числовыми признаками. Обозначим через ![77](https://github.com/kristinaovc/ML1/blob/master/image/77.PNG) произвольный элемент пространства объектов ![78](https://github.com/kristinaovc/ML1/blob/master/image/78.PNG).
+
+Предположим, что все признаки ![79](https://github.com/kristinaovc/ML1/blob/master/image/79.PNG) являются независимыми случайными величинами. Следовательно, функции правдоподбия классов представимы в виде
+
+![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG) 
+
+где ![81](https://github.com/kristinaovc/ML1/blob/master/image/81.PNG)  — плотность распределений значений j-го признака для класса y.
+
+Оценивать ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) дномерных плотностей гораздо проще, чем одну n-мерную
+плотность. Однако данное предположение крайне редко работает на практике, поэтому алгоритмы, использующие ![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG), называют наивными байесовскими.
+
+Подставим эмпирические оценки одномерных плотностей ![82](https://github.com/kristinaovc/ML1/blob/master/image/82.PNG) в оптимальный байесовский классификатор. Получим алгоритм наивный байесовский классификатор
+
+![83](https://github.com/kristinaovc/ML1/blob/master/image/83.PNG)
 
 
 
