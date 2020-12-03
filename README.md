@@ -508,13 +508,13 @@ margin -> function(points,classes,point,class)
 
 ### Наивный байесовский классификатор <a name="CLass"></a>
 
-Будем полагать, что все объекты описываются ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) числовыми признаками. Обозначим через ![77](https://github.com/kristinaovc/ML1/blob/master/image/77.PNG) произвольный элемент пространства объектов ![78](https://github.com/kristinaovc/ML1/blob/master/image/78.PNG).
+Будем полагать, что все объекты описываются ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) числовыми признаками. Обозначим через ![77](https://github.com/kristinaovc/ML1/blob/master/image/77.PNG) произвольный элемент пространства объектов ![78](https://github.com/kristinaovc/ML1/blob/master/image/78.PNG), где ![79](https://github.com/kristinaovc/ML1/blob/master/image/79.PNG).
 
-Предположим, что все признаки ![79](https://github.com/kristinaovc/ML1/blob/master/image/79.PNG) являются независимыми случайными величинами. Следовательно, функции правдоподбия классов представимы в виде
+Предположим, что все признаки ![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG)  являются независимыми случайными величинами. Следовательно, функции правдоподбия классов представимы в виде
 
-![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG) 
+![81](https://github.com/kristinaovc/ML1/blob/master/image/81.PNG)
 
-где ![81](https://github.com/kristinaovc/ML1/blob/master/image/81.PNG)  — плотность распределений значений j-го признака для класса y.
+где ![82](https://github.com/kristinaovc/ML1/blob/master/image/82.PNG) — плотность распределений значений j-го признака для класса y.
 
 Оценивать ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) дномерных плотностей гораздо проще, чем одну n-мерную
 плотность. Однако данное предположение крайне редко работает на практике, поэтому алгоритмы, использующие ![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG), называют наивными байесовскими.
