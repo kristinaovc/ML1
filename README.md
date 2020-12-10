@@ -529,6 +529,25 @@ margin -> function(points,classes,point,class)
 
 ![83](https://github.com/kristinaovc/ML1/blob/master/Naive/naive.PNG)
 
+```R
+naive <- function(x, Py, mu, sigma, m, n) 
+  {
+  amo <- matrix(c('setosa','versicolor', 'virginica', 0, 0, 0), nrow = 3, ncol = 2)
+  scores <- rep(0, m)
+  for (i in 1:m) 
+    {
+    scores[i] <- Py[i]
+    for (j in 1:n)
+      {
+      N <- 1/sqrt(2*pi)/sigma[i,j]*exp(-1/2*(x[j]-mu[i,j])^2/sigma[i,j]^2)
+      scores[i] <- scores[i] * N
+    }
+    amo[i,2] <-  scores[i]
+  }
+  class <- amo[,1][which.max(amo[,2])]
+}
+```
+
 **Преимущества**
 
 • Простота реализации.
