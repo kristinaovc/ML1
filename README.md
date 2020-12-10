@@ -521,9 +521,11 @@ margin -> function(points,classes,point,class)
 Оценивать ![76](https://github.com/kristinaovc/ML1/blob/master/image/76.PNG) дномерных плотностей гораздо проще, чем одну n-мерную
 плотность. Однако данное предположение крайне редко работает на практике, поэтому алгоритмы, использующие ![80](https://github.com/kristinaovc/ML1/blob/master/image/80.PNG), называют наивными байесовскими.
 
-Подставим эмпирические оценки одномерных плотностей ![82](https://github.com/kristinaovc/ML1/blob/master/image/82.PNG) в оптимальный байесовский классификатор. Получим алгоритм наивный байесовский классификатор ![84](https://github.com/kristinaovc/ML1/blob/master/image/84.PNG)
+Подставим эмпирические оценки одномерных плотностей ![82](https://github.com/kristinaovc/ML1/blob/master/image/82.PNG) в оптимальный байесовский классификатор. Получим алгоритм наивный байесовский классификатор 
 
 ![83](https://github.com/kristinaovc/ML1/blob/master/image/83.PNG)
+
+![84](https://github.com/kristinaovc/ML1/blob/master/image/84.PNG)
 
 ![83](https://github.com/kristinaovc/ML1/blob/master/Naive/naive.PNG)
 
