@@ -588,3 +588,17 @@ naive <- function(x, Py, mu, sigma, m, n)
 Этот алгоритм называется линейным дискриминантом Фишера (ЛДФ). Он неплохо работает, когда формы классов действительно близки к нормальным и не слишком сильно различаются. В этом случае линейное решающее правило близко к оптимальному байесовскому, но существенно более устойчиво, чем квадратичное, и часто обладает лучшей обобщающей способностью.
 
 ![93](https://github.com/kristinaovc/ML1/blob/master/LDF/LDF.PNG)
+
+```R
+LDF <- function(Py, lambda, n, m, mu, sigma, point) 
+  {
+  point <- as.numeric(point)
+  p <- rep(0, m)
+  for (i in 1:m) 
+    {
+    p[i] <- Py[i] * lambda[i]
+    p[i] <- p[i] *  exp(-(1/2) * t(point - mu[i, ]) %*% solve(sigma) %*% (point - mu[i, ])) / sqrt((2 * pi)^n * det(sigma))
+  }
+  return(classes[which.max(p)])
+}
+```
