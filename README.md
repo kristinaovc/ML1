@@ -562,6 +562,19 @@ naive <- function(x, Py, mu, sigma, m, n)
 
 ### Подстановочный алгоритм Plug-In <a name="PlugIn"></a>
 
+Оценим параметры функций правдоподобия ![85](https://github.com/kristinaovc/ML1/blob/master/image/85.PNG) и ![86](https://github.com/kristinaovc/ML1/blob/master/image/86.PNG) по частям обучающей выборки ![87](https://github.com/kristinaovc/ML1/blob/master/image/87.PNG) для каждого класса ![8](https://github.com/kristinaovc/ML1/blob/master/image/8.PNG). Затем эти выборочные оценки подставим в оптимальный байесовский классификатор. Получим байесовский нормальный классификатор, который называется также подстановочным (plug-in).
+
+![88](https://github.com/kristinaovc/ML1/blob/master/image/88.PNG)
+
+![89](https://github.com/kristinaovc/ML1/blob/master/image/89.PNG)
+
+1. Разделяющая кривая - эллипс.
+
+2. Разделяющая кривая - парабола.
+
+3. Разделяющая кривая - гипербола.
+
+
 ### Линейный дискриминант Фишера <a name="LDF"></a>
 
 
