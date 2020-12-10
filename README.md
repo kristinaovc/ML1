@@ -570,10 +570,27 @@ naive <- function(x, Py, mu, sigma, m, n)
 
 1. Разделяющая кривая - эллипс.
 
+![89](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug1.PNG)
+
 2. Разделяющая кривая - парабола.
+
+![90](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug2.PNG)
 
 3. Разделяющая кривая - гипербола.
 
+![91](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug3.PNG)
+
+```R
+mu1 <- estimateMu(objectsOfFirstClass) 
+mu2 <- estimateMu(objectsOfSecondClass) 
+sigma1 <- estimateCovarianceMatrix(objectsOfFirstClass, mu1) 
+sigma2 <- estimateCovarianceMatrix(objectsOfSecondClass, mu2) 
+coeffs <- getPlugInDiskriminantCoeffs(mu1, sigma1, mu2, sigma2) 
+ 
+x <- y <- seq(-10, 20, len=100)  
+z <- outer(x, y, function(x, y) coeffs["x^2"]*x^2 + coeffs["xy"]*x*y + coeffs["y^2"]*y^2 + coeffs["x"]*x + coeffs["y"]*y + coeffs["1"])  
+contour(x, y, z, levels=0, drawlabels=FALSE, lwd = 3, col = "red", add = TRUE)
+```
 
 ### Линейный дискриминант Фишера <a name="LDF"></a>
 
