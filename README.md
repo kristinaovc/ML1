@@ -594,7 +594,7 @@ contour(x, y, z, levels=0, drawlabels=FALSE, lwd = 3, col = "red", add = TRUE)
 
 ### Линейный дискриминант Фишера <a name="LDF"></a>
 
-Пусть ковариационные матрицы классов одинаковы и равны ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG). Оценим ![91](https://github.com/kristinaovc/ML1/blob/master/image/910.PNG) по всем ![92](https://github.com/kristinaovc/ML1/blob/master/image/92.PNG) объектам обучающей выборки. С учетом поправки на смещённость,
+Пусть ковариационные матрицы классов одинаковы и равны ![71](https://github.com/kristinaovc/ML1/blob/master/image/71.PNG). Оценим ![91](https://github.com/kristinaovc/ML1/blob/master/image/91.PNG) по всем ![92](https://github.com/kristinaovc/ML1/blob/master/image/92.PNG) объектам обучающей выборки. С учетом поправки на смещённость,
 
 ![93](https://github.com/kristinaovc/ML1/blob/master/image/93.PNG)
 
