@@ -574,11 +574,11 @@ naive <- function(x, Py, mu, sigma, m, n)
 
 2. Разделяющая кривая - парабола.
 
-![90](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug2.PNG)
+![90](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug3.PNG)
 
 3. Разделяющая кривая - гипербола.
 
-![91](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug3.PNG)
+![91](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug2.PNG)
 
 ```R
 mu1 <- estimateMu(objectsOfFirstClass) 
