@@ -581,6 +581,11 @@ naive <- function(x, Py, mu, sigma, m, n)
 ![91](https://github.com/kristinaovc/ML1/blob/master/PlugIn/plug2.PNG)
 
 ```R
+plot(xl[,1], xl[,2], pch = 21, bg = colors[xl[,3]], asp = 1, xlab = "Ось X", ylab = "Ось Y", main = "Подстановочный алгоритм(Plug-in)") 
+
+objectsOfFirstClass <- xl[xl[,3] == 1, 1:2] 
+objectsOfSecondClass <- xl[xl[,3] == 2, 1:2] 
+
 mu1 <- estimateMu(objectsOfFirstClass) 
 mu2 <- estimateMu(objectsOfSecondClass) 
 sigma1 <- estimateCovarianceMatrix(objectsOfFirstClass, mu1) 
@@ -590,7 +595,17 @@ coeffs <- getPlugInDiskriminantCoeffs(mu1, sigma1, mu2, sigma2)
 x <- y <- seq(-10, 20, len=100)  
 z <- outer(x, y, function(x, y) coeffs["x^2"]*x^2 + coeffs["xy"]*x*y + coeffs["y^2"]*y^2 + coeffs["x"]*x + coeffs["y"]*y + coeffs["1"])  
 contour(x, y, z, levels=0, drawlabels=FALSE, lwd = 3, col = "red", add = TRUE)
+
 ```
+Недостатки подстановочного алгоритма вытекают из нескольких чрезмерно сильных базовых предположений, которые на практике часто не выполняются.
+
+- Функции правдоподобия классов могут существенно отличаться от гауссовских. В частности, когда имеются признаки, принимающие дискретные значения, или когда классы распадаются на изолированные сгустки.
+
+- Если длина выборки меньше размерности пространства, ![95](https://github.com/kristinaovc/ML1/blob/master/image/95.PNG), или среди признаков есть линейно зависимые, то матрица ![86](https://github.com/kristinaovc/ML1/blob/master/image/86.PNG) становится вырожденной. В этом случае обратная матрица не существует и метод вообще неприменим.
+
+- На практике встречаются задачи, в которых признаки «почти линейно зависимы». Тогда матрица ![86](https://github.com/kristinaovc/ML1/blob/master/image/86.PNG) является плохо обусловленной, то есть близкой к некоторой вырожденной матрице. Это так называемая проблема мультиколлинеарности, которая влечет неустойчивость обратной матрицы ![96](https://github.com/kristinaovc/ML1/blob/master/image/96.PNG). Она может непредсказуемо и сильно изменяться при незначительных вариациях исходных данных, например, связанных с погрешностями измерений. Неустойчивость снижает качество классификации.
+
+- Выборочные оценки чувствительны к нарушениям нормальности распределений, в частности, к редким большим выбросам.
 
 ### Линейный дискриминант Фишера <a name="LDF"></a>
 
