@@ -13,6 +13,8 @@
     3. [Подстановочный алгоритм(Plug-In)](#PlugIn)
     4. [Линейный дискриминант Фишера](#LDF)
 3. [Линейные алгоритмы	классификации](#Linear)
+    1. [ADALINE. Правило	Хэбба](#Adaline)
+    2. [Логистическая	регрессия](#Regression)
 
 | Алгоритм| k/h | Величина ошибки |
 | :---: | :---: | :---: |
@@ -639,4 +641,44 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 ## Линейные алгоритмы классификации <a name="Linear"></a>
 
-Рассмотрим задачу классификации с двумя классами 
+Пусть ![78](https://github.com/kristinaovc/ML1/blob/master/image/78.PNG) и ![97](https://github.com/kristinaovc/ML1/blob/master/image/97.PNG).
+
+Если дискриминантная функция определяется как скалярное произведение вектора ![98](https://github.com/kristinaovc/ML1/blob/master/image/98.PNG) и вектора пераметров ![99](https://github.com/kristinaovc/ML1/blob/master/image/99.PNG) , то получается линейный
+классификатор:
+
+![100](https://github.com/kristinaovc/ML1/blob/master/image/100.PNG)
+
+
+Уравнение ![101](https://github.com/kristinaovc/ML1/blob/master/image/101.PNG)  задает гиперплоскость, разделяющую классы в пространстве ![102](https://github.com/kristinaovc/ML1/blob/master/image/102.PNG). Если вектор ![98](https://github.com/kristinaovc/ML1/blob/master/image/98.PNG)  находится по одну сторону гиперплоскости с ее направляющим вектором ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG) , то объект ![98](https://github.com/kristinaovc/ML1/blob/master/image/98.PNG)  относится к классу +1, иначе — к классу −1.
+
+#### Метод стохастического градиента
+
+Пусть задана обучающая выборка ![104](https://github.com/kristinaovc/ML1/blob/master/image/104.PNG). Требуется найти вектор параметров ![99](https://github.com/kristinaovc/ML1/blob/master/image/99.PNG), при котором достигается минимум аппроксимированного эмпирического риска:
+
+![105](https://github.com/kristinaovc/ML1/blob/master/image/105.PNG)
+
+
+Применим для минимизаци ![106](https://github.com/kristinaovc/ML1/blob/master/image/106.PNG)  метод градиентного спуска. В этом методе выбирается некоторое начальное приближение для ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG),  затем запускается итерационный процесс, на каждом шаге которого вектор ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG)  изменяется в направлении наиболее быстрого убывания функционала ![107](https://github.com/kristinaovc/ML1/blob/master/image/107.PNG).  Это направление противоположно направлению вектора градиента ![108](https://github.com/kristinaovc/ML1/blob/master/image/108.PNG):
+
+![109](https://github.com/kristinaovc/ML1/blob/master/image/109.PNG),
+
+где ![110](https://github.com/kristinaovc/ML1/blob/master/image/110.PNG) — темп обучения.
+
+Предположим, что функция ![111](https://github.com/kristinaovc/ML1/blob/master/image/111.PNG) дифференцируема. Выпишем градиент:
+
+![112](https://github.com/kristinaovc/ML1/blob/master/image/112.PNG)
+
+Каждый прецедент ![113](https://github.com/kristinaovc/ML1/blob/master/image/113.PNG)  вносит аддитивный вклад в изменение вектора ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG), но вектор ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG)  изменяется только после перебора всех ![92](https://github.com/kristinaovc/ML1/blob/master/image/92.PNG) объектов. Сходимость итерационного процесса можно улучшить, если выбирать прецеденты ![113](https://github.com/kristinaovc/ML1/blob/master/image/113.PNG) по одному, для каждого делать градиентный шаг и сразу обновлять вектор весов:
+
+![114](https://github.com/kristinaovc/ML1/blob/master/image/114.PNG)
+
+
+В методе стохастического градиента (stochastic gradient, SG) прецеденты
+перебираются в случайном порядке. Если же объекты предъявлять в некотором фиксированном порядке, процесс может зациклиться или разойтись.
+
+
+
+
+### ADALINE.	Правило	Хэбба <a name="Adaline"></a>
+
+### Логистическая	регрессия <a name="Regression"></a>
