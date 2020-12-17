@@ -721,4 +721,18 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
+#### Правило Хэбба
+
+Будем считать признаки бинарными: ![124](https://github.com/kristinaovc/ML1/blob/master/image/124.PNG). Тогда при классификации ![125](https://github.com/kristinaovc/ML1/blob/master/image/125.PNG) объекта ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) возможны следующие три случая:
+
+1. Если ответ ![125](https://github.com/kristinaovc/ML1/blob/master/image/125.PNG) совпадает с истинным ![35](https://github.com/kristinaovc/ML1/blob/master/image/35.PNG), то вектор весов изменять не надо.
+ 
+2. Если ![126](https://github.com/kristinaovc/ML1/blob/master/image/126.PNG) и ![127](https://github.com/kristinaovc/ML1/blob/master/image/127.PNG), то вектор весов ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG) увеличивается (можно только те ![128](https://github.com/kristinaovc/ML1/blob/master/image/128.PNG) , для которых ![129](https://github.com/kristinaovc/ML1/blob/master/image/129.PNG)) ![130](https://github.com/kristinaovc/ML1/blob/master/image/130.PNG), где ![110](https://github.com/kristinaovc/ML1/blob/master/image/110.PNG) — темп обучения.
+
+3. Если ![131](https://github.com/kristinaovc/ML1/blob/master/image/131.PNG) и ![132](https://github.com/kristinaovc/ML1/blob/master/image/132.PNG), то вектор весов w уменьшается: ![133](https://github.com/kristinaovc/ML1/blob/master/image/133.PNG).
+
+Эти три случая объединяются в так называемое правило Хэбба:
+
+**если** ![134](https://github.com/kristinaovc/ML1/blob/master/image/134.PNG) то ![135](https://github.com/kristinaovc/ML1/blob/master/image/135.PNG).
+
 ### Логистическая	регрессия <a name="Regression"></a>
