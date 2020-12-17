@@ -737,4 +737,6 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 **если** ![134](https://github.com/kristinaovc/ML1/blob/master/image/134.PNG) то ![135](https://github.com/kristinaovc/ML1/blob/master/image/135.PNG).
 
+![124](https://github.com/kristinaovc/ML1/blob/master/Adaline/habb.PNG)
+
 ### Логистическая	регрессия <a name="Regression"></a>
