@@ -748,7 +748,7 @@ margins <- array(dim = l)
 
 Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
-![123](https://github.com/kristinaovc/ML1/blob/master/Adaline/adaline.PNG)
+![123](https://github.com/kristinaovc/ML1/blob/master/Adaline/adaline1.PNG)
 
 #### Правило Хэбба
 
@@ -764,6 +764,6 @@ margins <- array(dim = l)
 
 **если** ![134](https://github.com/kristinaovc/ML1/blob/master/image/134.PNG) то ![135](https://github.com/kristinaovc/ML1/blob/master/image/135.PNG).
 
-![124](https://github.com/kristinaovc/ML1/blob/master/Adaline/habb.PNG)
+![124](https://github.com/kristinaovc/ML1/blob/master/Adaline/habb1.PNG)
 
 ### Логистическая	регрессия <a name="Regression"></a>
