@@ -673,12 +673,52 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 ![114](https://github.com/kristinaovc/ML1/blob/master/image/114.PNG)
 
 
-В методе стохастического градиента (stochastic gradient, SG) прецеденты
-перебираются в случайном порядке. Если же объекты предъявлять в некотором фиксированном порядке, процесс может зациклиться или разойтись.
+В методе стохастического градиента (stochastic gradient, SG) прецеденты перебираются в случайном порядке. Если же объекты предъявлять в некотором фиксированном порядке, процесс может зациклиться или разойтись.
 
+**Вход** : ![7](https://github.com/kristinaovc/ML1/blob/master/image/7.PNG) — обуч. выборка; η — темп обучения; ![115](https://github.com/kristinaovc/ML1/blob/master/image/115.PNG) — параметр сглаживания.
 
+**Выход** : Веса ![116](https://github.com/kristinaovc/ML1/blob/master/image/116.PNG).
 
+1: Инициализировать веса ![116](https://github.com/kristinaovc/ML1/blob/master/image/116.PNG).
+
+2: Вычислить начальное значение функционала ![117](https://github.com/kristinaovc/ML1/blob/master/image/117.PNG).
+
+3: **повторять**
+
+4: выбрать объект ![49](https://github.com/kristinaovc/ML1/blob/master/image/49.PNG).
+
+5: вычислить ошибку алгоритма:
+
+![118](https://github.com/kristinaovc/ML1/blob/master/image/118.PNG)
+
+6: сделать шаг градиентного спуска:
+
+![114](https://github.com/kristinaovc/ML1/blob/master/image/114.PNG)
+
+7: оценить новое значение функционала:
+
+![119](https://github.com/kristinaovc/ML1/blob/master/image/119.PNG)
+
+8: **пока** значение Q не стабилизируется и/или веса w не перестанут изменяться.
+
+**Преимущества метода SG**
+
+- Метод легко реализуется и легко обобщается на нелинейные классификаторы и на нейронные сети — суперпозиции линейных классификаторов.
+
+- Метод подходит для динамического обучения, когда обучающие объекты поступают потоком, и вектор весов обновляется при появлении каждого объекта.
+
+- Метод позволяет настраивать веса на избыточно больших выборках, за счет того, что случайной подвыборки может оказаться достаточно для обучения.
 
 ### ADALINE.	Правило	Хэбба <a name="Adaline"></a>
+
+Возьмем ![120](https://github.com/kristinaovc/ML1/blob/master/image/120.PNG). Тогда ![121](https://github.com/kristinaovc/ML1/blob/master/image/121.PNG), где производная берется по ![103](https://github.com/kristinaovc/ML1/blob/master/image/103.PNG), вычисляя которую
+
+![122](https://github.com/kristinaovc/ML1/blob/master/image/122.PNG)
+
+получим правило обновления весов на каждой итерации метода стохастического градиента:
+
+![123](https://github.com/kristinaovc/ML1/blob/master/image/123.PNG)
+
+Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
 ### Логистическая	регрессия <a name="Regression"></a>
