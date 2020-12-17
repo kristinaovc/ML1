@@ -721,7 +721,7 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
-![123](https://github.com/kristinaovc/ML1/tree/master/Adaline/adaline.PNG)
+![123](https://github.com/kristinaovc/ML1/blob/master/Adaline/adaline.PNG)
 
 #### Правило Хэбба
 
