@@ -701,6 +701,33 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 8: **пока** значение Q не стабилизируется и/или веса w не перестанут изменяться.
 
+```R
+margins <- array(dim = l)
+    for (i in 1:l)
+    {
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      margins[i] <- crossprod(w, xi) * yi 
+    }
+    errorIndexes <- which(margins <= 0) 
+    if (length(errorIndexes) > 0)
+    {
+      i <- sample(1:l, 1)
+      iterCount <- iterCount + 1
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      wx <- crossprod(w, xi)
+      margin <- wx * yi
+      ex <- habb(margin)
+      w <- w + eta * yi * xi 
+      Qprev <- Q
+      Q <- (1 - lambda) * Q + lambda * ex 
+    } else
+    {
+      break
+    }
+```
+
 **Преимущества метода SG**
 
 - Метод легко реализуется и легко обобщается на нелинейные классификаторы и на нейронные сети — суперпозиции линейных классификаторов.
