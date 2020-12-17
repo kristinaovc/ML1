@@ -721,6 +721,8 @@ LDF <- function(Py, lambda, n, m, mu, sigma, point)
 
 Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
+![123](https://github.com/kristinaovc/ML1/tree/master/Adaline)
+
 #### Правило Хэбба
 
 Будем считать признаки бинарными: ![124](https://github.com/kristinaovc/ML1/blob/master/image/124.PNG). Тогда при классификации ![125](https://github.com/kristinaovc/ML1/blob/master/image/125.PNG) объекта ![21](https://github.com/kristinaovc/ML1/blob/master/image/21.PNG) возможны следующие три случая:
