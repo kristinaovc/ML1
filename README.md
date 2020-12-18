@@ -759,6 +759,49 @@ adaline <- function(x)
 
 ```R
 
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  w <- c(1/2, 1/2, 1/2)
+  iterCount <- 0
+  Q <- 0
+  for (i in 1:l) {
+    wx <- sum(w * xl[i, 1:n])
+    margin <- wx * xl[i, n + 1]
+    Q <- Q + adaline(margin)
+  }
+  repeat 
+    {
+    margins <- array(dim = l)
+    for (i in 1:l)
+    {
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      margins[i] <- crossprod(w, xi) * yi 
+    }
+    errorIndexes <- which(margins <= 0) 
+    if (length(errorIndexes) > 0)
+    {
+      i <- sample(1:l, 1)
+      iterCount <- iterCount + 1
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      wx <- crossprod(w, xi)
+      margin <- wx * yi
+      ex <- adaline(margin)
+      w <- w - eta * (wx - yi) * xi
+      Qprev <- Q
+      Q <- (1 - lambda) * Q + lambda * ex 
+    } else
+    {
+      break
+    }
+  }
+  return(w) 
+
+```
+
+```R
+
   sigma <- matrix(c(3,0,0,7),2,2)
   xy1 <- mvrnorm (ObjectsCountofEachClass,c(1,1),sigma)
   xy2 <- mvrnorm (ObjectsCountofEachClass,c(9,7),sigma)
@@ -798,6 +841,50 @@ habb <- function(x)
 {
   return (max(-x, 0))
 }
+
+```
+
+```R
+
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  w <- c(1/2, 1/2, 1/2)
+  iterCount <- 0
+  Q <- 0
+  for (i in 1:l) 
+    {
+    wx <- sum(w * xl[i, 1:n])
+    margin <- wx * xl[i, n + 1]
+    Q <- Q + habb(margin)
+  }
+  repeat 
+    {
+    margins <- array(dim = l)
+    for (i in 1:l)
+    {
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      margins[i] <- crossprod(w, xi) * yi 
+    }
+    errorIndexes <- which(margins <= 0) 
+    if (length(errorIndexes) > 0)
+    {
+      i <- sample(1:l, 1)
+      iterCount <- iterCount + 1
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      wx <- crossprod(w, xi)
+      margin <- wx * yi
+      ex <- habb(margin)
+      w <- w + eta * yi * xi 
+      Qprev <- Q
+      Q <- (1 - lambda) * Q + lambda * ex 
+    } else
+    {
+      break
+    }
+  }
+  return(w) 
 
 ```
 
