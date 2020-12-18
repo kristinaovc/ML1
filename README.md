@@ -748,6 +748,25 @@ margins <- array(dim = l)
 
 Это правило предложено Видроу и Хоффом и называется дельта-правилом, а сам линейный нейрон — **адаптивным линейным элементом (ADALINE)**.
 
+```R
+
+  sigma <- matrix(c(3,0,0,7),2,2)
+  xy1 <- mvrnorm (ObjectsCountofEachClass,c(1,1),sigma)
+  xy2 <- mvrnorm (ObjectsCountofEachClass,c(9,7),sigma)
+  xl <- rbind(cbind(xy1, 1), cbind(xy2, -1))
+  xlNorm <- normal(xl)
+  xlNorm <- base(xlNorm)
+  colors <- c("green2", "red")
+  plot(xlNorm[, 1], xlNorm[, 2], pch = 21, asp = 1, main="ADALINE")
+  for (i in 1:dim(xlNorm)[1]) 
+    {
+    points(xlNorm[i, 1], xlNorm[i, 2], pch = 21, bg = colors[ifelse((xl[i, 3] < 0), 1, 2)], asp = 1)
+  }
+  w <- sg(xlNorm)
+  abline(a = w[3] / w[2], b = -w[1] / w[2], lwd = 3, col = "blue")
+
+```
+
 ![123](https://github.com/kristinaovc/ML1/blob/master/Adaline/adaline1.PNG)
 
 #### Правило Хэбба
