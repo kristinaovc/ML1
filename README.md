@@ -750,6 +750,15 @@ margins <- array(dim = l)
 
 ```R
 
+adaline <- function(x)
+{
+  return ((x-1)^2)
+} 
+
+```
+
+```R
+
   sigma <- matrix(c(3,0,0,7),2,2)
   xy1 <- mvrnorm (ObjectsCountofEachClass,c(1,1),sigma)
   xy2 <- mvrnorm (ObjectsCountofEachClass,c(9,7),sigma)
@@ -782,6 +791,15 @@ margins <- array(dim = l)
 Эти три случая объединяются в так называемое правило Хэбба:
 
 **если** ![134](https://github.com/kristinaovc/ML1/blob/master/image/134.PNG) то ![135](https://github.com/kristinaovc/ML1/blob/master/image/135.PNG).
+
+```R
+
+habb <- function(x)
+{
+  return (max(-x, 0))
+}
+
+```
 
 ```R
 sigma <- matrix(c(3,0,0,7),2,2)
