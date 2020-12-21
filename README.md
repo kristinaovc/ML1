@@ -758,8 +758,7 @@ adaline <- function(x)
 ```
 
 ```R
-
-  l <- dim(xl)[1]
+l <- dim(xl)[1]
   n <- dim(xl)[2] - 1
   w <- c(1/2, 1/2, 1/2)
   iterCount <- 0
@@ -797,26 +796,6 @@ adaline <- function(x)
     }
   }
   return(w) 
-
-```
-
-```R
-
-  sigma <- matrix(c(3,0,0,7),2,2)
-  xy1 <- mvrnorm (ObjectsCountofEachClass,c(1,1),sigma)
-  xy2 <- mvrnorm (ObjectsCountofEachClass,c(9,7),sigma)
-  xl <- rbind(cbind(xy1, 1), cbind(xy2, -1))
-  xlNorm <- normal(xl)
-  xlNorm <- base(xlNorm)
-  colors <- c("green2", "red")
-  plot(xlNorm[, 1], xlNorm[, 2], pch = 21, asp = 1, main="ADALINE")
-  for (i in 1:dim(xlNorm)[1]) 
-    {
-    points(xlNorm[i, 1], xlNorm[i, 2], pch = 21, bg = colors[ifelse((xl[i, 3] < 0), 1, 2)], asp = 1)
-  }
-  w <- sg(xlNorm)
-  abline(a = w[3] / w[2], b = -w[1] / w[2], lwd = 3, col = "blue")
-
 ```
 
 ![123](https://github.com/kristinaovc/ML1/blob/master/Adaline/adaline1.PNG)
@@ -845,8 +824,7 @@ habb <- function(x)
 ```
 
 ```R
-
-  l <- dim(xl)[1]
+ l <- dim(xl)[1]
   n <- dim(xl)[2] - 1
   w <- c(1/2, 1/2, 1/2)
   iterCount <- 0
@@ -888,24 +866,6 @@ habb <- function(x)
 
 ```
 
-```R
-sigma <- matrix(c(3,0,0,7),2,2)
-  xy1 <- mvrnorm (ObjectsCountofEachClass,c(1,1),sigma)
-  xy2 <- mvrnorm (ObjectsCountofEachClass,c(9,7),sigma)
-  xl <- rbind(cbind(xy1, 1), cbind(xy2, -1))
-  xlNorm <- normal(xl)
-  xlNorm <- base(xlNorm)
-  colors <- c("green2", "red")
-  plot(xlNorm[, 1], xlNorm[, 2], pch = 21, asp = 1, main="Правило Хэбба")
-  for (i in 1:dim(xlNorm)[1]) 
-    {
-    points(xlNorm[i, 1], xlNorm[i, 2], pch = 21, bg = colors[ifelse((xl[i, 3] < 0), 1, 2)], asp = 1)
-  }
-  w <- sg(xlNorm)
-  abline(a = w[3] / w[2], b = -w[1] / w[2], lwd = 3, col = "blue")
-
-```
-
 ![124](https://github.com/kristinaovc/ML1/blob/master/Adaline/habb1.PNG)
 
 ### Логистическая	регрессия <a name="Regression"></a>
@@ -923,6 +883,57 @@ sigma <- matrix(c(3,0,0,7),2,2)
 Логистическое правило обновления весов для градиентного шага в методе стохастического градиента: ![137](https://github.com/kristinaovc/ML1/blob/master/image/137.PNG).
 
 ![138](https://github.com/kristinaovc/ML1/blob/master/image/138.PNG) - — сигмоидная функция.
+
+```R
+loss <- function(x)
+{
+  return (log2(1 + exp(-x)))
+}
+sigmoid <- function(z)
+{
+  return (1 / (1 + exp(-z)))
+}
+```
+
+```R
+ l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  w <- c(1/2, 1/2, 1/2)
+  iterCount <- 0
+  Q <- 0
+  for (i in 1:l) {
+    wx <- sum(w * xl[i, 1:n])
+    margin <- wx * xl[i, n + 1]
+    Q <- Q + loss(margin)
+  }
+  repeat {
+    margins <- array(dim = l)
+    for (i in 1:l)
+    {
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      margins[i] <- crossprod(w, xi) * yi 
+    }
+    errorIndexes <- which(margins <= 0) 
+    if (length(errorIndexes) > 0)
+    {
+      i <- sample(1:l, 1)
+      iterCount <- iterCount + 1
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      wx <- crossprod(w, xi)
+      margin <- wx * yi
+      ex <- loss(margin)
+      w <- w + eta * xi * yi * sigmoid(-wx * yi) 
+      Qprev <- Q
+      Q <- (1 - lambda) * Q + lambda * ex 
+    } else
+    {
+      break
+    }
+  }
+  return(w) 
+```
 
 ![138](https://github.com/kristinaovc/ML1/blob/master/Regression/log.PNG)
 
