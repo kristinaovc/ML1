@@ -937,6 +937,10 @@ sigmoid <- function(z)
 
 ![138](https://github.com/kristinaovc/ML1/blob/master/Regression/log.PNG)
 
+![139](https://github.com/kristinaovc/ML1/blob/master/Regression/log2.PNG)
+
+![140](https://github.com/kristinaovc/ML1/blob/master/Regression/log6.PNG)
+
 Достоинства логистической регрессии
 
 - Как правило, логистическая регрессия дает лучшие результаты по сравнению с линейным дискриминантом Фишера (поскольку она основана на менее жестких гипотезах), а также по сравнению с дельта-правилом и правилом Хэбба (поскольку она использует „более правильную” функцию потерь).
