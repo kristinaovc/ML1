@@ -939,7 +939,9 @@ sigmoid <- function(z)
 
 ![139](https://github.com/kristinaovc/ML1/blob/master/Regression/log2.PNG)
 
-![140](https://github.com/kristinaovc/ML1/blob/master/Regression/log6.PNG)
+![140](https://github.com/kristinaovc/ML1/blob/master/Regression/log7.PNG)
+
+![141](https://github.com/kristinaovc/ML1/blob/master/Regression/log6.PNG)
 
 Достоинства логистической регрессии
 
